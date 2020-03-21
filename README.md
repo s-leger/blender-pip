@@ -55,7 +55,7 @@ def execute(self, context):
         status = {'SUCCESS'}
     else:
         status = {'ERROR'}
-    self.report(status, msg[1]) 
+    self.report(status, msg) 
     return {'FINISHED'}
 
 ```
