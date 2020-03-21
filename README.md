@@ -43,6 +43,21 @@ see https://pip.pypa.io/en/stable/reference/pip_install/
 Pip.install("scipy==1.2.1")
 Pip.install("pyproj==2.1.3")
 Pip.install("Pillow==6.0.0")
+
+# Sample usage in a blender operator
+
+def execute(self, context):
+    # Pyside2 require shiboken
+    # override default options to skip --no-deps
+    # we may setup both by hand instead
+    res, msg = Pip.install("pyside2", "--user  --only-binary all")
+    if res:
+        status = {'SUCCESS'}
+    else:
+        status = {'ERROR'}
+    self.report(status, msg[1]) 
+    return {'FINISHED'}
+
 ```
 
 #### Advanced options
