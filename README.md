@@ -20,19 +20,21 @@ By default Pip class use ```-user --only-binary all --no-deps``` options to call
 ### Usage
 
 #### Basic methods
-```
+```python
 Pip.install("scipy==1.2.1")
 Pip.uninstall("pyproj==2.1.3")
 ```
 
 #### Upgrade pip  
-```Pip.upgrade_pip()```
+```python
+Pip.upgrade_pip()
+```
 
 
 #### Dependency check
 You have to check for your modules dependency, and setup by hand according your needs.  
 Also ensure there are wheels available for all target platforms.  
-```
+```python
 python_version = Pip.python_version()
 if python_version.minor == 6:
 ```
@@ -62,6 +64,6 @@ def execute(self, context):
 
 #### Advanced options
 Raw pip calls using static _cmd method
-```
+```python
 Pip()._cmd("install", options, module)
 ```
