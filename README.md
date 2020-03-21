@@ -39,7 +39,7 @@ if python_version.minor == 6:
 
 #### Setup modules 
 see https://pip.pypa.io/en/stable/reference/pip_install/    
-```
+```python
 Pip.install("scipy==1.2.1")
 Pip.install("pyproj==2.1.3")
 Pip.install("Pillow==6.0.0")
