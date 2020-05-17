@@ -67,3 +67,10 @@ Raw pip calls using static _cmd method
 ```python
 Pip()._cmd("install", options, module)
 ```
+
+#### Manual setup of modules
+In blender python console
+```python
+from blender_pip import Pip
+Pip.install("module_name=version")
+```
