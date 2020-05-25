@@ -40,6 +40,7 @@ class Pip:
     def _ensure_user_site_package():
         import os
         import site
+        import sys
         site_package = site.getusersitepackages()
         if os.path.exists(site_package):
             if site_package not in sys.path:
