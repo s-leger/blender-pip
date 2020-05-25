@@ -50,7 +50,7 @@ class Pip:
             site.addsitedir(site_package)
 
     def _cmd(self, action, options, module):
-        if options in not None and "--user" in options:
+        if options is not None and "--user" in options:
             self._ensure_user_site_package()
 
         cmd = [PYPATH, "-m", "pip", action]
