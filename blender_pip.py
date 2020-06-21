@@ -34,10 +34,11 @@ PYPATH = bpy.app.binary_path_python
 class Pip:
 
     def __init__(self):
+        self.ensure_user_site_package()
         self._ensurepip()
     
     @staticmethod
-    def _ensure_user_site_package():
+    def ensure_user_site_package():
         import os
         import site
         import sys
