@@ -68,6 +68,16 @@ Raw pip calls using static _cmd method
 Pip()._cmd("install", options, module)
 ```
 
+#### Integration into addons
+From version 2.83, blender will no more expose user site-package in path.
+Ensure user site package method detect site package and add to sys.path when missing.
+Call this method from your init, before custom module(s) import
+
+```python
+Pip.ensure_user_site_package()
+```
+
+
 #### Manual setup of modules
 In blender python console
 ```python
