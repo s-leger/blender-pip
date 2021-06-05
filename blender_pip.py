@@ -28,7 +28,11 @@ import bpy
 import subprocess
 
 
-PYPATH = bpy.app.binary_path_python
+if bpy.app.version > (2,92,0):
+    import sys
+    PYPATH = sys.executable
+else:
+    PYPATH = bpy.app.binary_path_python
 
 
 class Pip:
